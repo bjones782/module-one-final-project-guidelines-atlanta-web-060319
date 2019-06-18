@@ -4,5 +4,6 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.string :problems
       t.string :categories
       t.integer :points
+    end
   end
 end

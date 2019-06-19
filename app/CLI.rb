@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # class CLI
 #     def initialize
 #         @name = name
@@ -64,3 +65,7 @@ end
 
 
 # binding.pry 
+=======
+class CLI
+end
+>>>>>>> c7b65bdace37db8888c4410e4f917fdf7d078c6a

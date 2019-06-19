@@ -1,6 +1,7 @@
 User.destroy_all
 Score.destroy_all
 Question.destroy_all
+Answer.destroy_all
 
 tony = User.create(name: "Tony", points: 0)
 bob = User.create(name: "Bob", points: 0)

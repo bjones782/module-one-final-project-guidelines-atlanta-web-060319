@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# class CLI
-#     def initialize
-#         @name = name
-        
-        
-#     end
-# end
-# require 'pry'
-
 class CLI
     def run
       @prompt = TTY::Prompt.new
@@ -65,7 +55,5 @@ end
 
 
 # binding.pry 
-=======
 class CLI
 end
->>>>>>> c7b65bdace37db8888c4410e4f917fdf7d078c6a

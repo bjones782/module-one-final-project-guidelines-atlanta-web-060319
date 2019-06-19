@@ -9,4 +9,13 @@ class Question < ActiveRecord::Base
         # rand_question = self.limit(1).order("RANDOM()")
         Question.pluck(:problems).shuffle[1]
     end
+
+    def correct_answer
+        if gets.chomp == Answer.solution
+            score += 100
+        else
+            score -=100
+        end
+
+    end
 end 

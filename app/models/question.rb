@@ -7,7 +7,8 @@ class Question < ActiveRecord::Base
         # rand_questions = [Question.all]
         # puts rand_questions.find
         # rand_question = self.limit(1).order("RANDOM()")
-        Question.pluck(:problems).shuffle[1]
+        ask = Question.pluck(:problems).shuffle[1]
+        print ask
     end
 
     def correct_answer

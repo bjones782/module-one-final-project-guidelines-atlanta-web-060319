@@ -2,7 +2,10 @@ class Score < ActiveRecord::Base
     belongs_to :user
     belongs_to :question
 
-    # def assign_user(id)
-    #     user_id == 
+    
+    # def leader_board
+    #     array = Score.reverse_each {|x| print x, " " }
     # end
+
+
 end 

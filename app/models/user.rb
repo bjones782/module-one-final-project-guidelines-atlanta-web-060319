@@ -24,5 +24,8 @@ class User < ActiveRecord::Base
         end
      end
 
+     def create_user(name)
+        self.create(name)
+     end 
 
 end 

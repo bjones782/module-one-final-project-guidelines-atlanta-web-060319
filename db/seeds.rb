@@ -2,9 +2,9 @@ User.destroy_all
 Score.destroy_all
 Question.destroy_all
 
-tony = User.create(name: "Tony", points: 0)
-bob = User.create(name: "Bob", points: 0)
-amy = User.create(name: "Amy", points: 0)
+tony = User.create(name: "Tony", points: 300)
+bob = User.create(name: "Bob", points: 500)
+amy = User.create(name: "Amy", points: 600)
 
 
 answer1 = Answer.create(question_id: 1, solution: "True")
@@ -28,7 +28,8 @@ answer18 = Answer.create(question_id: 18, solution: "14/12")
 answer19 = Answer.create(question_id: 19, solution: "5796629")
 answer20 = Answer.create(question_id: 20, solution: "2")
 
-
+score1 = Score.create(points:100, user_id:1, question_id:1)
+score2 = Score.create(points:100, user_id:1,question_id:1)
 
 
 

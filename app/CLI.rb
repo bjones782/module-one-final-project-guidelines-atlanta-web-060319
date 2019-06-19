@@ -101,5 +101,4 @@ end
 
 
 # binding.pry 
-class CLI
-end
+

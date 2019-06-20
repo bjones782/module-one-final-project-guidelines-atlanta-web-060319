@@ -14,6 +14,7 @@ class CLI
         # second_menu
         # leader_board
         quiz = 10.times {Question.prompt}
+        game_over
     end 
 end 
 
@@ -45,6 +46,7 @@ def login
     puts @pastel.magenta("What is your first name?")
     name = gets.chomp
     @user = User.create(name: name)
+    print @pastel.green("\n\nHello #{@user.name}!\n\n")
     second_menu
 end 
 
@@ -102,16 +104,16 @@ def Question.prompt
         
         puts "Correct!"
     else
-    
-        puts "Incorrect"
+
+        puts "Incorrect!"
     end
 end
 
-# quiz = 10.times {Question.prompt}
 
-# For timer, we want the question to prompt, then timer begins,
-#  and after 10 seconds no matter what user input, moves on to next question
-
+def game_over
+    puts "\n\n"
+    puts @font.write("GAME OVER").center(300)
+end 
 
     
 end

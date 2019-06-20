@@ -12,8 +12,8 @@ class CLI
         main_menu
         login 
         second_menu
+        # points
         Question.prompt
-        correct_answer
     end 
 end 
 
@@ -60,21 +60,31 @@ def second_menu
     end 
 end 
 
-def self.prompt
+# def points 
+#     # If answer is correct, add 100 points to user, if incorrect, deduct 100 points from user.
+#  end
+
+def Question.prompt
     # rand_questions = [Question.all]
     # puts rand_questions.find
     # rand_question = self.limit(1).order("RANDOM()")
-    Question.pluck(:problems).shuffle[1]
-end
-
-def correct_answer
-    if gets.chomp == Answer.solution
-        score += 100
+    ask = Question.pluck(:problems).shuffle[1]
+    print ask
+    a = gets.chomp
+    if Answer.find_by(solution: a)
+        
+        puts "Correct!"
     else
-        score -=100
+    
+        puts "Incorrect"
     end
-
 end
+
+
+
+
+
+
 
 
 # def leader_board

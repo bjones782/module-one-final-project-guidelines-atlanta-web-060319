@@ -10,9 +10,9 @@ class CLI
 
       while true
         main_menu
-        login 
-        second_menu
-        # points
+        # login 
+        # second_menu
+        # leader_board
         quiz = 10.times {Question.prompt}
     end 
 end 
@@ -34,7 +34,7 @@ def main_menu
     choice = @prompt.enum_select("What would you like to do?", first_menu)
 
     if choice == first_menu[0]
-        # login
+        login
     else choice == first_menu[1]
         puts @pastel.yellow("Thanks for visiting!\n\n")
         exit 
@@ -45,21 +45,42 @@ def login
     puts @pastel.magenta("What is your first name?")
     name = gets.chomp
     @user = User.create(name: name)
-    'reset'
+    second_menu
 end 
 
 def second_menu
-    'reset'
-    menu2 = ["View Leader Board", "Start Game"]
+    # 'reset'
+    menu2 = ["Start Game", "Exit"]
     choice = @prompt.enum_select("What would you like to do?", menu2)
-
-    if choice == menu2[0]
-        leader_board 
-    else choice == menu2[1]
+    case choice 
+    when menu2[0]
         puts @pastel.blue("Let's go!\n\n")
+        Question.prompt 
+    when menu2[1]
+        puts @pastel.yellow("Thanks for visiting!\n\n")
+        exit 
+    else
+        main_menu
     end 
 end 
 
+
+# def leader_board
+    
+#     sorted = Score.pluck(:points, :user_id)
+#      arr2 = []
+#      sorted.each do |thing| 
+#          arr2.push(thing[0])
+#          arr2.push(thing[1])
+#          userr = User.all.find(thing[1])
+#          arr2.push(userr)
+#     #  print arr2
+#      print "\n\n"
+#     #  print @pastel.yellow("HIGH SCORES  ") 
+#      print arr2[0].to_s + " " + arr2[2].name
+#      print "\n\n"
+#  end 
+#  end 
 # def points 
 #     # If answer is correct, add 100 points to user, if incorrect, deduct 100 points from user.
 #  end
@@ -92,25 +113,6 @@ end
 #  and after 10 seconds no matter what user input, moves on to next question
 
 
-
-
-
-
-
-# def leader_board
-#    sorted = Score.pluck(:points, :user_id)
-#     arr2 = []
-#     sorted.each do |thing| 
-#         arr2.push(thing[0])
-#         arr2.push(thing[1])
-#         userr = User.all.find(:user_id)
-#         arr2.push(userr)
-#     print arr2
-#     print "\n\n" 
-#     print arr2[0].to_s + " " + arr2[2].name
-#     print "\n\n\n"
-# end 
-# end 
     
 end
 

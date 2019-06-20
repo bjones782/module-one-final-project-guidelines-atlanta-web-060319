@@ -29,8 +29,10 @@ answer18 = Answer.create(question_id: 18, solution: "14/12")
 answer19 = Answer.create(question_id: 19, solution: "5796629")
 answer20 = Answer.create(question_id: 20, solution: "2")
 
-score1 = Score.create(points:100, user_id:1, question_id:1)
-score2 = Score.create(points:100, user_id:1,question_id:1)
+score1 = Score.create(points:200, user_id:128, question_id:1)
+score2 = Score.create(points:100, user_id:129, question_id:1)
+score3 = Score.create(points:700, user_id:130, question_id:1)
+
 
 
 

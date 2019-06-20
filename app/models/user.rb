@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     has_many :answers, through: :questions
-    belongs_to :score
+    belongs_to :score, dependent: :destroy
    
     #  def points 
     #     if gets.chomp == answer

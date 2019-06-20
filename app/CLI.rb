@@ -13,7 +13,7 @@ class CLI
         login 
         second_menu
         # points
-        Question.prompt
+        quiz = 10.times {Question.prompt}
     end 
 end 
 
@@ -69,8 +69,14 @@ def Question.prompt
     # puts rand_questions.find
     # rand_question = self.limit(1).order("RANDOM()")
     ask = Question.pluck(:problems).shuffle[1]
-    print ask
+    puts ask
+    (3).downto(0) do |i|
+        print i
+        sleep 1
+        print "\n"
+    end
     a = gets.chomp
+    # print sleep 5
     if Answer.find_by(solution: a)
         
         puts "Correct!"
@@ -80,6 +86,10 @@ def Question.prompt
     end
 end
 
+# quiz = 10.times {Question.prompt}
+
+# For timer, we want the question to prompt, then timer begins,
+#  and after 10 seconds no matter what user input, moves on to next question
 
 
 
@@ -104,7 +114,7 @@ end
     
 end
 
- 
+
 
 
 
